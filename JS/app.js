@@ -62,7 +62,7 @@ const loop = setInterval(() => {
       title: 'You died!',
       text: 'Do you want to play again?',
       icon: 'error',
-      confirmButtonText: 'Cool'
+      confirmButtonText: 'Yes'
     })
   }
 }, 10)
