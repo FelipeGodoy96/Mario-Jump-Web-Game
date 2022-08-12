@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game-board {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  margin: 0 auto;
+  background: linear-gradient(#87CEEB, #E0F6FF);
+  border-bottom: solid 20px rgb(35, 160, 35);
+}
+
+.pipe {
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  animation: pipe-animation 3s infinite linear;
+}
+
+.mario {
+  position: absolute;
+  width: 150px;
+  bottom: 0;
+}
+
+.clouds {
+  position: absolute;
+  width: 550px;
+  animation: clouds-animation 10s infinite linear;
+}
+
+.jump {
+  animation: mario-jump 650ms infinite ease-out;
+}
+
+.death {
+  animation: mario-death 1s linear;
+}
+
+.ground {
+  position: absolute;
+  width: 100vw;
+  height: 20vh;
+  margin: 0 auto;
+  bottom: 0;
+}
+
+.ground .grass {
+  width: 1280px;
+}
+
+.scoreboard {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  position: absolute;
+  top: 15%;
+  right: 13.6%;
+  font-family: 'Press Start 2P', sans-serif;
+  z-index: 1;
+  color: white;
+  user-select: none;
+}
+
+.highscoreboard {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-family: 'Press Start 2P', sans-serif;
+  z-index: 1;
+  color: white;
+  user-select: none;
+}
+
+.lifes {
+  position: absolute;
+  color: #8F2015;
+  top: 10%;
+  left: 5%;
+  font-family: 'Press Start 2P', sans-serif;
+  z-index: 1;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  user-select: none;
+}
+
+.lifes .x {
+  color: white;
+  position: absolute;
+  top: 150%;
+  left: 12.5%;
+  user-select: none;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes mario-jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 220px;
+  }
+  60% {
+    bottom: 220px;
+  }
+  70% {
+    bottom: 120px;
+  }
+  100% {
+    bottom: 0
+  }
+}
+
+@keyframes mario-death {
+  30% {
+    bottom: 300px;
+  }
+  90% {
+    bottom: -20vh;
+  }
+  100% {
+    bottom: -60vh;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 100%;
+  }
+}
